@@ -95,3 +95,133 @@ const PROJECTS = [
     icon: "fas fa-tasks"
   }
 ];
+
+// ==========================================================================
+// 2. DOM RENDERING FUNCTIONS (CREATING CARDS IN HTML)
+// ==========================================================================
+
+// Function to generate the HTML for a project mockup card preview
+function createMockupHTML(type, icon) {
+  return `
+    <div class="project-mockup ${type}">
+      <div class="mockup-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <div class="mockup-body">
+        <i class="${icon}"></i>
+      </div>
+    </div>
+  `;
+}
+
+// Render dynamic team member cards into the team grid
+function renderTeamMembers() {
+  const container = document.getElementById("team-grid");
+  if (!container) return;
+
+  let teamHTML = "";
+  for (let i = 0; i < TEAM_MEMBERS.length; i++) {
+    const member = TEAM_MEMBERS[i];
+    
+    // Create badges for skills
+    let skillsHTML = "";
+    for (let j = 0; j < member.skills.length; j++) {
+      skillsHTML += `<span class="team-skill-badge">${member.skills[j]}</span>`;
+    }
+
+    teamHTML += `
+      <article class="team-card reveal-zoom-in">
+        <div class="team-card-header">
+          <div class="team-image-wrapper">
+            <img src="${member.image}" alt="${member.name}" class="team-image" loading="lazy">
+          </div>
+          <div class="team-meta">
+            <h3>${member.name}</h3>
+            <span class="role">${member.role}</span>
+          </div>
+        </div>
+        <p class="team-bio">${member.bio}</p>
+        <h4 class="team-skills-title">Skills</h4>
+        <div class="team-skills-list">
+          ${skillsHTML}
+        </div>
+        <div class="team-links">
+          <a href="${member.github}" target="_blank" class="team-btn github" aria-label="${member.name} GitHub">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="${member.linkedin}" target="_blank" class="team-btn linkedin" aria-label="${member.name} LinkedIn">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+          </a>
+        </div>
+      </article>
+    `;
+  }
+  
+  container.innerHTML = teamHTML;
+}
+
+// Render dynamic project cards into the projects grid
+function renderProjects() {
+  const container = document.getElementById("projects-grid");
+  if (!container) return;
+
+  let projectsHTML = "";
+  for (let i = 0; i < PROJECTS.length; i++) {
+    const proj = PROJECTS[i];
+    
+    // Create technology badges
+    let techHTML = "";
+    for (let j = 0; j < proj.technologies.length; j++) {
+      techHTML += `<span class="project-tag">${proj.technologies[j]}</span>`;
+    }
+
+    projectsHTML += `
+      <article class="project-card reveal-fade-up">
+        <div class="project-visual">
+          ${createMockupHTML(proj.mockupType, proj.icon)}
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">${proj.name}</h3>
+          <p class="project-description">${proj.description}</p>
+          <div class="project-tags">
+            ${techHTML}
+          </div>
+          <a href="${proj.url}" target="_blank" class="project-link ripple">
+            Live Demo <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i>
+          </a>
+        </div>
+      </article>
+    `;
+  }
+
+  container.innerHTML = projectsHTML;
+}
+
+// Render small quick contact cards for the sidebar in the contact section
+function renderQuickContacts() {
+  const container = document.getElementById("quick-contacts-grid");
+  if (!container) return;
+
+  let contactsHTML = "";
+  for (let i = 0; i < TEAM_MEMBERS.length; i++) {
+    const member = TEAM_MEMBERS[i];
+    
+    // Extract first name for display
+    const firstName = member.name.split(" ")[0];
+
+    contactsHTML += `
+      <div class="quick-contact-card">
+        <img src="${member.image}" alt="${member.name}" class="quick-contact-img" loading="lazy">
+        <div class="quick-contact-name">${firstName}</div>
+        <div class="quick-contact-links">
+          <a href="${member.github}" target="_blank" aria-label="${member.name} GitHub"><i class="fab fa-github"></i></a>
+          <a href="${member.linkedin}" target="_blank" aria-label="${member.name} LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    `;
+  }
+
+  container.innerHTML = contactsHTML;
+}
