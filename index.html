@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Agency | Premium Portfolio</title>
+  <meta name="description" content="We are a collaborative team of professional frontend developers designing premium, fully responsive, and modern web experiences.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons for modern aesthetic -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+ 
+  <!-- Navigation -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-dot"></span>Team Agency
+      </a>
+      
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+ 
+      <div class="nav-actions">
+        <!-- Theme Toggle Switch -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+          <i class="fas fa-moon moon-icon"></i>
+          <i class="fas fa-sun sun-icon"></i>
+        </button>
+ 
+        <!-- Mobile Menu Toggle (Hamburger) -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+ 
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <!-- Floating Background Shapes -->
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+ 
+    <div class="hero-content container">
+      <h1 class="hero-title reveal-fade-up">
+        Building Modern Web <br>
+        <span class="text-gradient">Experiences <span id="typing-text">Together</span></span><span class="typing-cursor">|</span>
+      </h1>
+      <p class="hero-subtitle reveal-fade-up">
+        We are a passionate team of developers creating modern, responsive, and interactive web applications using HTML, CSS, JavaScript, and GitHub collaboration.
+      </p>
+      <div class="hero-ctas reveal-fade-up">
+        <a href="#team" class="btn btn-primary ripple">Meet Our Team</a>
+        <a href="#projects" class="btn btn-secondary ripple">View Projects</a>
+      </div>
+    </div>
+ 
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+ 
+  <!-- About Section -->
+  <section id="about" class="about section-padding">
+    <div class="container">
+      <div class="section-header reveal-fade-up">
+        <span class="section-tagline">Who We Are</span>
+        <h2 class="section-title">About Our Team</h2>
+        <div class="section-underline"></div>
+      </div>
+ 
+      <div class="about-grid">
+        <div class="about-text-wrapper reveal-slide-left">
+          <p class="about-lead">
+            We are a collaborative team of aspiring software developers who enjoy creating responsive, user-friendly, and interactive web applications.
+          </p>
+          <p class="about-description">
+            Our goal is to learn modern technologies, build real-world projects, and grow together as developers. We combine clean design aesthetics with performant code to build products that deliver exceptional digital experiences. By using structured Git workflows, we ensure seamless collaboration and high standards of quality.
+          </p>
+          <div class="about-features">
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-users-cog"></i></div>
+              <div class="feature-content">
+                <h4>Agile Collaboration</h4>
+                <p>Developing together through active peer review and Git version control.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="feature-content">
+                <h4>Modern Standards</h4>
+                <p>Structuring accessible semantic markup and optimized CSS architectures.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- About Visual Element -->
+        <div class="about-visual reveal-slide-right">
+          <div class="visual-card">
+            <div class="visual-header">
+              <span class="window-dot red"></span>
+              <span class="window-dot yellow"></span>
+              <span class="window-dot green"></span>
+              <span class="window-title">code_editor.js</span>
+            </div>
+            <pre class="code-snippet"><code><span class="keyword">const</span> team = {
+  name: <span class="string">"Team Agency"</span>,
+  mission: <span class="string">"Build beautiful & accessible web experiences"</span>,
+  stack: [<span class="string">"HTML5"</span>, <span class="string">"CSS3"</span>, <span class="string">"JS (ES6+)"</span>],
+  status: <span class="string">"Always Learning"</span>,
+  readyToCollaborate: <span class="boolean">true</span>
+};
+ 
+// Working together to make a difference
+export default team;</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Meet Our Team -->
+  <section id="team" class="team section-padding">
+    <div class="container">
+      <div class="section-header reveal-fade-up">
+        <span class="section-tagline">The Creators</span>
+        <h2 class="section-title">Meet Our Team</h2>
+        <div class="section-underline"></div>
+      </div>
+      
+      <!-- Dynamic Team Cards Container -->
+      <div class="team-grid" id="team-grid"></div>
+    </div>
+  </section>
+ 
+  <!-- Team Skills -->
+  <section class="skills section-padding bg-alt">
+    <div class="container">
+      <div class="section-header reveal-fade-up">
+        <span class="section-tagline">Our Tech Stack</span>
+        <h2 class="section-title">Core Skills & Expertise</h2>
+        <div class="section-underline"></div>
+      </div>
+ 
+      <div class="skills-grid" id="skills-grid">
+        <!-- Animated Badges -->
+        <div class="skill-card reveal-zoom-in">
+          <div class="skill-icon-wrapper html5"><i class="fab fa-html5"></i></div>
+          <h3>HTML5</h3>
+          <span class="skill-level">Semantic & Accessible</span>
+        </div>
+        <div class="skill-card reveal-zoom-in">
+          <div class="skill-icon-wrapper css3"><i class="fab fa-css3-alt"></i></div>
+          <h3>CSS3</h3>
+          <span class="skill-level">Flexbox, Grid & Keyframes</span>
+        </div>
+        <div class="skill-card reveal-zoom-in">
+          <div class="skill-icon-wrapper js"><i class="fab fa-js"></i></div>
+          <h3>JavaScript</h3>
+          <span class="skill-level">Vanilla DOM & ES6+</span>
+        </div>
+        <div class="skill-card reveal-zoom-in">
+          <div class="skill-icon-wrapper git"><i class="fab fa-git-alt"></i></div>
+          <h3>Git</h3>
+          <span class="skill-level">Branching & Workflows</span>
+        </div>
+        <div class="skill-card reveal-zoom-in">
+          <div class="skill-icon-wrapper github"><i class="fab fa-github"></i></div>
+          <h3>GitHub</h3>
+          <span class="skill-level">Collaboration & Pull Requests</span>
+        </div>
+        <div class="skill-card reveal-zoom-in">
+          <div class="skill-icon-wrapper responsive"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Responsive Design</h3>
+          <span class="skill-level">Fluid Layouts & Media Queries</span>
+        </div>
+        <div class="skill-card reveal-zoom-in">
+          <div class="skill-icon-wrapper dom"><i class="fas fa-sitemap"></i></div>
+          <h3>DOM Manipulation</h3>
+          <span class="skill-level">Dynamic Elements & Events</span>
+        </div>
+        <div class="skill-card reveal-zoom-in">
+          <div class="skill-icon-wrapper api"><i class="fas fa-network-wired"></i></div>
+          <h3>REST APIs</h3>
+          <span class="skill-level">Fetch, Async/Await & JSON</span>
+        </div>
+        <div class="skill-card reveal-zoom-in">
+          <div class="skill-icon-wrapper storage"><i class="fas fa-database"></i></div>
+          <h3>Local Storage</h3>
+          <span class="skill-level">Persistent Client Data</span>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Featured Team Projects -->
+  <section id="projects" class="projects section-padding">
+    <div class="container">
+      <div class="section-header reveal-fade-up">
+        <span class="section-tagline">Recent Work</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="section-underline"></div>
+      </div>
+ 
+      <!-- Dynamic Project Cards Container -->
+      <div class="projects-grid" id="projects-grid"></div>
+    </div>
+  </section>
+ 
+  <!-- Team Statistics -->
+  <section class="stats section-padding bg-alt">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal-zoom-in">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <h3 class="stat-number" data-target="5">0</h3>
+          <p class="stat-label">Team Members</p>
+        </div>
+        <div class="stat-card reveal-zoom-in">
+          <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+          <h3 class="stat-number" data-target="5">0</h3>
+          <p class="stat-label">Completed Projects</p>
+        </div>
+        <div class="stat-card reveal-zoom-in">
+          <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+          <h3 class="stat-number" data-target="100" data-suffix="%">0</h3>
+          <p class="stat-label">Responsive Websites</p>
+        </div>
+        <div class="stat-card reveal-zoom-in">
+          <div class="stat-icon"><i class="fab fa-github-alt"></i></div>
+          <h3 class="stat-number" data-target="20">0</h3>
+          <p class="stat-label">GitHub Repositories</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Contact Section -->
+  <section id="contact" class="contact section-padding">
+    <div class="container">
+      <div class="section-header reveal-fade-up">
+        <span class="section-tagline">Get In Touch</span>
+        <h2 class="section-title">Let's Build Something Together</h2>
+        <div class="section-underline"></div>
+      </div>
+ 
+      <div class="contact-grid">
+        
+        <!-- Left Side: Info & Quick Team Contact Cards -->
+        <div class="contact-info-wrapper reveal-slide-left">
+          <p class="contact-lead">
+            We're always excited to collaborate on innovative projects, internships, hackathons, open-source contributions, and freelance opportunities. Feel free to contact us—we'd love to hear from you.
+          </p>
+ 
+          <div class="info-list">
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Location</h4>
+                <p>Bengaluru, Karnataka, India</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email Address</h4>
+                <a href="mailto:teamagency.dev@gmail.com">teamagency.dev@gmail.com</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-laptop-house"></i>
+              <div>
+                <h4>Availability</h4>
+                <p>Available for Freelance & Internships</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-handshake"></i>
+              <div>
+                <h4>Collaboration</h4>
+                <p>Open for Creative Partnerships</p>
+              </div>
+            </div>
+          </div>
+ 
+          <!-- Quick Contacts for Team Members -->
+          <div class="quick-contacts-container">
+            <h3>Direct Contact</h3>
+            <div class="quick-contacts-grid" id="quick-contacts-grid">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Right Side: Contact Form -->
+        <div class="contact-form-wrapper reveal-slide-right">
+          <form id="contact-form" class="contact-form" novalidate>
+            
+            <div class="form-group">
+              <input type="text" id="form-name" class="form-input" required placeholder=" ">
+              <label for="form-name" class="form-label">Full Name</label>
+              <span class="error-message" id="name-error"></span>
+            </div>
+ 
+            <div class="form-group">
+              <input type="email" id="form-email" class="form-input" required placeholder=" ">
+              <label for="form-email" class="form-label">Email Address</label>
+              <span class="error-message" id="email-error"></span>
+            </div>
+ 
+            <div class="form-group">
+              <input type="text" id="form-subject" class="form-input" required placeholder=" ">
+              <label for="form-subject" class="form-label">Subject</label>
+              <span class="error-message" id="subject-error"></span>
+            </div>
+ 
+            <div class="form-group">
+              <textarea id="form-message" class="form-input" required rows="5" placeholder=" "></textarea>
+              <label for="form-message" class="form-label">Message (Minimum 20 characters)</label>
+              <span class="error-message" id="message-error"></span>
+            </div>
+ 
+            <button type="submit" id="submit-btn" class="btn btn-primary btn-submit ripple">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
+            </button>
+          </form>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Success Popup Modal -->
+  <div class="popup-modal" id="success-modal" aria-hidden="true" role="dialog">
+    <div class="popup-content">
+      <div class="success-checkmark">
+        <div class="check-icon">
+          <span class="icon-line line-tip"></span>
+          <span class="icon-line line-long"></span>
+          <div class="icon-circle"></div>
+          <div class="icon-fix"></div>
+        </div>
+      </div>
+      <h2>Message Sent Successfully!</h2>
+      <p>Thank you for reaching out. We will get back to you as soon as possible.</p>
+      <button class="btn btn-primary" id="close-modal-btn">Close</button>
+    </div>
+  </div>
+ 
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#home" class="logo"><span class="logo-dot"></span>Team Agency</a>
+        <p>Building high-quality, responsive web layouts and digital products together.</p>
+      </div>
+ 
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+ 
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <div class="footer-social-icons">
+          <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:teamagency.dev@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>&copy; 2026 Team Agency. All rights reserved.</p>
+        <p>Handcrafted with <i class="fas fa-heart" style="color: #ef4444;"></i> in Bengaluru</p>
+      </div>
+    </div>
+  </footer>
+ 
+  <!-- Scripts -->
+  <script src="images.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
