@@ -225,3 +225,161 @@ function renderQuickContacts() {
 
   container.innerHTML = contactsHTML;
 }
+
+// ==========================================================================
+// 3. INTERACTIVE LAYOUT FUNCTIONS (NAVIGATION, TOGGLES, ANIMATIONS)
+// ==========================================================================
+
+// Handle header background styling when scrolling
+function handleHeaderScroll() {
+  const header = document.querySelector(".header");
+  if (!header) return;
+
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+}
+
+// Highlight the current section link in the navbar
+function updateActiveNavLink() {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const scrollY = window.pageYOffset;
+
+  sections.forEach((section) => {
+    const sectionHeight = section.offsetHeight;
+    const sectionTop = section.offsetTop - 120; // Accounts for header height
+    const sectionId = section.getAttribute("id");
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${sectionId}`) {
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+}
+
+// Mobile navigation hamburger toggle logic
+function setupMobileMenu() {
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  if (!hamburger || !navMenu) return;
+
+  // Toggle active class when menu button clicked
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+
+    // Freeze body scrolling while menu is open
+    if (navMenu.classList.contains("active")) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  });
+
+  // Close menu when clicking on any navbar page link
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+  });
+}
+
+// Theme management (Dark Mode / Light Mode toggle with local storage)
+function setupTheme() {
+  const themeToggle = document.getElementById("theme-toggle");
+  if (!themeToggle) return;
+
+  // 1. Check for saved theme in local storage or use system color schemes default
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const currentTheme = savedTheme || (prefersDark ? "dark" : "light");
+
+  // Apply theme setting
+  document.documentElement.setAttribute("data-theme", currentTheme);
+
+  // 2. Add event listener to handle clicks
+  themeToggle.addEventListener("click", () => {
+    const activeTheme = document.documentElement.getAttribute("data-theme");
+    const nextTheme = activeTheme === "dark" ? "light" : "dark";
+
+    document.documentElement.setAttribute("data-theme", nextTheme);
+    localStorage.setItem("theme", nextTheme);
+  });
+}
+
+// Typing title text animation inside Hero section
+function setupTypingAnimation() {
+  const typingSpan = document.getElementById("typing-text");
+  if (!typingSpan) return;
+
+  const wordsList = ["Together", "with Passion", "with Quality", "as a Team"];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let delay = 100;
+
+  const typeEffect = () => {
+    const currentWord = wordsList[wordIndex];
+
+    if (isDeleting) {
+      // Erase characters
+      typingSpan.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+      delay = 50; // Deletes faster
+    } else {
+      // Add characters
+      typingSpan.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+      delay = 120; // Typing speed
+    }
+
+    // Determine states transitions
+    if (!isDeleting && charIndex === currentWord.length) {
+      delay = 2000; // Pause when word completed
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % wordsList.length; // Loop back or go to next word
+      delay = 500; // Brief pause before typing next
+    }
+
+    setTimeout(typeEffect, delay);
+  };
+
+  typeEffect();
+}
+
+// Back to Top Button behavior
+function setupBackToTop() {
+  const backToTopBtn = document.getElementById("back-to-top");
+  if (!backToTopBtn) return;
+
+  // Toggle button visibility on scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add("visible");
+    } else {
+      backToTopBtn.classList.remove("visible");
+    }
+  });
+
+  // Scroll to top when clicked
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
+
