@@ -51,3 +51,47 @@ const TEAM_MEMBERS = [
     linkedin: "https://www.linkedin.com/in/abhishek-allurkar"
   }
 ];
+
+// All featured projects.
+const PROJECTS = [
+  {
+    name: "Interactive Quiz App",
+    url: "https://interactive-quiz-app-indol.vercel.app/",
+    description: "Interactive quiz platform with timer, score tracking, categories, and responsive UI.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    mockupType: "quiz",
+    icon: "fas fa-question-circle"
+  },
+  {
+    name: "Expense Tracker",
+    url: "https://expense-tracker-qjdu.vercel.app/",
+    description: "Track income and expenses with local storage and modern dashboard.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    mockupType: "tracker",
+    icon: "fas fa-chart-line"
+  },
+  {
+    name: "Live News Feed",
+    url: "https://live-news-hdk4.vercel.app/",
+    description: "Responsive news application using APIs to fetch real-time headlines.",
+    technologies: ["HTML", "CSS", "JavaScript", "REST API"],
+    mockupType: "news",
+    icon: "fas fa-newspaper"
+  },
+  {
+    name: "GitHub Developer Explorer",
+    url: "https://github-developer-explorer-psi.vercel.app/",
+    description: "Search GitHub developers and explore repositories, followers, and profile details.",
+    technologies: ["HTML", "CSS", "JavaScript", "GitHub API"],
+    mockupType: "github",
+    icon: "fab fa-github"
+  },
+  {
+    name: "Kanban Task Board",
+    url: "https://kanban-taskboard-1.vercel.app/",
+    description: "Drag-and-drop task management board with multiple workflow stages.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    mockupType: "kanban",
+    icon: "fas fa-tasks"
+  }
+];
